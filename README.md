@@ -9,7 +9,7 @@
 <br>
 
 <img alt="GitHub" src="https://img.shields.io/github/license/DangoTown/RMC?logo=apache">
-<img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/DangoTown/RMC/ci.yml">
+<img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/DangoTown/RMC/ci.yaml">
 <img alt="Kotlin Version" src="https://img.shields.io/badge/Kotlin-1.8.22-pink?logo=kotlin">
 </div>
 
