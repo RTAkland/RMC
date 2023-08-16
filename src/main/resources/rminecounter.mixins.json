@@ -1,9 +1,13 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "cn.rtast.rminecounter.mixin",
+  "package": "cn.rtast.rminecounter.mixins",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "BlockMixin",
+    "ServerStatHandlerMixin",
+    "StatsAccessor",
+    "StatsMixin"
   ],
   "client": [
   ],

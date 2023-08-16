@@ -2,25 +2,26 @@
   "schemaVersion": 1,
   "id": "rminecounter",
   "version": "${version}",
-
   "name": "RMineCounter",
   "description": "添加挖掘榜",
-  "authors": [],
-  "contact": {},
-
+  "authors": [
+    "RTAkland"
+  ],
+  "contact": {
+    "repo": "https://github.com/RTAkland/RMineCounter"
+  },
   "license": "Apache-2.0",
   "icon": "assets/rminecounter/icon.png",
-
-  "environment": "server",
-  "entrypoints": {},
-
-      "mixins": [
-        "rminecounter.mixins.json"
-      ],
-
+  "environment": "*",
+  "entrypoints": {
+    "main": []
+  },
+  "mixins": [
+    "rminecounter.mixins.json"
+  ],
   "depends": {
     "fabricloader": ">=${loader_version}",
-        "fabric": "*",
+    "fabric": "*",
     "minecraft": "${minecraft_version}"
   }
 }
