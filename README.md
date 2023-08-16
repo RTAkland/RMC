@@ -1,6 +1,6 @@
 <div align="center">
 
-<h2>RMineCounter</h2>
+<h1>RMineCounter</h1>
 
 <p>在游戏中添加统计信息来统计玩家挖掘数据, 可以借助计分板显示出数据</p>
 
