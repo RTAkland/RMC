@@ -13,6 +13,10 @@
 <img alt="Kotlin Version" src="https://img.shields.io/badge/Kotlin-1.8.22-pink?logo=kotlin">
 </div>
 
+# 依赖
+
+* 由于使用了`Kotlin`语言所以你需要放置`fabric-language-kotlin`在你的mods文件夹内. 点击[这里](https://github.com/FabricMC/fabric-language-kotlin/releases/latest)快速下载最新版本的`fabric-language-kotlin`
+
 # 使用
 
 * 默认是不会记录玩家挖掘数据的, 你需要添加一个计分板， 准则为`minecraft.custom:minecraft.rmc`的一个计分板, 以下为实例命令, 如有需要可以自行修改
