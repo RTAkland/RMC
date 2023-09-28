@@ -48,7 +48,7 @@ java {
     if (JavaVersion.current() < javaVersion) {
         toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
     }
-    archivesBaseName = project.archives_base_name
+    archivesBaseName = project.archives_base_name + "+fabric." + project.minecraft_version
     withSourcesJar()
 }
 
