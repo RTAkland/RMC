@@ -14,7 +14,12 @@
   "icon": "assets/rminecounter/icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": []
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "cn.rtast.rminecounter.RMineCounter"
+      }
+    ]
   },
   "mixins": [
     "rminecounter.mixins.json"

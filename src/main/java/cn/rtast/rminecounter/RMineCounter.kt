@@ -17,31 +17,36 @@ package cn.rtast.rminecounter
 
 import cn.rtast.rminecounter.mixins.StatsAccessor
 import com.google.common.collect.Sets
+import net.fabricmc.api.ModInitializer
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.stat.Stat
 import net.minecraft.stat.StatFormatter
 import net.minecraft.util.Identifier
 
 
-object RMineCounter {
+object RMineCounter : ModInitializer {
 
-    private var RMCC: Identifier? = null
+    private var RMC: Identifier? = null
 
     private val stats: MutableSet<String> = Sets.newHashSet()
 
     private fun addStat(stat: Identifier) {
-        this.stats.add(stat.toString())
+        stats.add(stat.toString())
     }
 
     fun registerStats() {
-        this.addStat(StatsAccessor.callRegister("rmc", StatFormatter.DEFAULT).also { this.RMCC = it })
+        addStat(StatsAccessor.callRegister("rmc", StatFormatter.DEFAULT).also { RMC = it })
     }
 
     fun onPlayerMineFinish(player: PlayerEntity) {
-        player.increaseStat(this.RMCC, 1)
+        player.increaseStat(RMC, 1)
     }
 
     operator fun contains(stat: Stat<*>): Boolean {
-        return this.stats.contains(stat.value.toString())
+        return stats.contains(stat.value.toString())
+    }
+
+    override fun onInitialize() {
+        println("RMC 已加载!")
     }
 }
