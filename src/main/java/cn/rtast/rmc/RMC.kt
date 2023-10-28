@@ -13,40 +13,38 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package cn.rtast.rminecounter
 
-import cn.rtast.rminecounter.mixins.StatsAccessor
+package cn.rtast.rmc
+
+import cn.rtast.rmc.mixin.StatsAccessor
 import com.google.common.collect.Sets
-import net.fabricmc.api.ModInitializer
-import net.minecraft.entity.player.PlayerEntity
+import net.fabricmc.api.DedicatedServerModInitializer
 import net.minecraft.stat.Stat
 import net.minecraft.stat.StatFormatter
 import net.minecraft.util.Identifier
 
+class RMC : DedicatedServerModInitializer {
 
-object RMineCounter : ModInitializer {
 
-    private var RMC: Identifier? = null
+    companion object {
+        private val stats: MutableSet<String> = Sets.newHashSet()
 
-    private val stats: MutableSet<String> = Sets.newHashSet()
+        var RMC_STAT_ID: Identifier? = null
 
-    private fun addStat(stat: Identifier) {
-        stats.add(stat.toString())
+        private fun addStat(stat: Identifier) {
+            stats.add(stat.toString())
+        }
+
+        fun registerStats() {
+            addStat(StatsAccessor.callRegister("rmc", StatFormatter.TIME).also { RMC_STAT_ID = it })
+        }
+
+        operator fun contains(stat: Stat<*>): Boolean {
+            return stats.contains(stat.value.toString())
+        }
     }
 
-    fun registerStats() {
-        addStat(StatsAccessor.callRegister("rmc", StatFormatter.DEFAULT).also { RMC = it })
-    }
-
-    fun onPlayerMineFinish(player: PlayerEntity) {
-        player.increaseStat(RMC, 1)
-    }
-
-    operator fun contains(stat: Stat<*>): Boolean {
-        return stats.contains(stat.value.toString())
-    }
-
-    override fun onInitialize() {
+    override fun onInitializeServer() {
         println("RMC 已加载!")
     }
 }

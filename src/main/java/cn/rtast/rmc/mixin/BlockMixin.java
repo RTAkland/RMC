@@ -14,9 +14,9 @@
  *    limitations under the License.
  */
 
-package cn.rtast.rminecounter.mixins;
+package cn.rtast.rmc.mixin;
 
-import cn.rtast.rminecounter.RMineCounter;
+import cn.rtast.rmc.RMC;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -29,11 +29,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Block.class)
 public class BlockMixin {
-
     @Inject(method = "onBreak", at = @At("HEAD"))
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player, CallbackInfo ci) {
-//        BlockListener.INSTANCE.onBreak(player);
-        RMineCounter.INSTANCE.onPlayerMineFinish(player);
+        player.increaseStat(RMC.Companion.getRMC_STAT_ID(), 1);
     }
-
 }

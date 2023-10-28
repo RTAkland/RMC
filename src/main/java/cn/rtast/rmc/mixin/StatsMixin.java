@@ -14,10 +14,9 @@
  *    limitations under the License.
  */
 
-package cn.rtast.rminecounter.mixins;
+package cn.rtast.rmc.mixin;
 
-
-import cn.rtast.rminecounter.RMineCounter;
+import cn.rtast.rmc.RMC;
 import net.minecraft.stat.Stats;
 import org.spongepowered.asm.mixin.Mixin;
 
@@ -25,6 +24,6 @@ import org.spongepowered.asm.mixin.Mixin;
 public class StatsMixin {
 
     static {
-        RMineCounter.INSTANCE.registerStats();
+        RMC.Companion.registerStats();
     }
 }

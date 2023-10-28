@@ -14,9 +14,9 @@
  *    limitations under the License.
  */
 
-package cn.rtast.rminecounter.mixins;
+package cn.rtast.rmc.mixin;
 
-import cn.rtast.rminecounter.RMineCounter;
+import cn.rtast.rmc.RMC;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.stat.ServerStatHandler;
@@ -29,7 +29,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public abstract class ServerStatHandlerMixin {
     @Redirect(method = "sendStats", at = @At(value = "INVOKE", target = "Lit/unimi/dsi/fastutil/objects/Object2IntMap;put(Ljava/lang/Object;I)I"), remap = false)
     private int excludeCustomStats(Object2IntMap<Stat<?>> map, Object object, int value, ServerPlayerEntity player) {
-        if (!RMineCounter.INSTANCE.contains((Stat<?>) object)) {
+        if (!RMC.Companion.contains((Stat<?>) object)) {
             return map.put((Stat<?>) object, value);
         } else {
             return map.defaultReturnValue();

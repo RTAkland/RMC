@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package cn.rtast.rminecounter.mixins;
+package cn.rtast.rmc.mixin;
 
 import net.minecraft.registry.Registry;
 import net.minecraft.stat.StatFormatter;
