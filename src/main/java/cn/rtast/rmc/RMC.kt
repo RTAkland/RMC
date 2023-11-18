@@ -25,7 +25,6 @@ import net.minecraft.util.Identifier
 
 class RMC : DedicatedServerModInitializer {
 
-
     companion object {
         private val stats: MutableSet<String> = Sets.newHashSet()
 
