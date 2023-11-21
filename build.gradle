@@ -18,6 +18,8 @@ dependencies {
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     modImplementation("net.fabricmc:fabric-language-kotlin:1.9.6+kotlin.1.8.22")
+
+    implementation 'it.unimi.dsi:fastutil:8.5.12'
 }
 
 processResources {
@@ -47,7 +49,6 @@ java {
         toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
     }
     archivesBaseName = project.archives_base_name
-    withSourcesJar()
 }
 
 jar {
