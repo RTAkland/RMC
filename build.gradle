@@ -11,6 +11,11 @@ repositories {
     mavenCentral()
 }
 
+configurations {
+    embed
+    compile.extendsFrom(embed)
+}
+
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
@@ -19,7 +24,7 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     modImplementation("net.fabricmc:fabric-language-kotlin:1.9.6+kotlin.1.8.22")
 
-    implementation 'it.unimi.dsi:fastutil:8.5.12'
+    embed(api("it.unimi.dsi:fastutil:8.5.12"))
 }
 
 processResources {
