@@ -31,6 +31,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class BlockMixin {
     @Inject(method = "onBreak", at = @At("HEAD"))
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player, CallbackInfo ci) {
-        player.increaseStat(RMC.Companion.getRMC_STAT_ID(), 1);
+        player.increaseStat(RMC.RMC_STAT_ID, 1);
     }
 }
