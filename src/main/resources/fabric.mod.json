@@ -13,13 +13,10 @@
   },
   "license": "Apache-2.0",
   "icon": "assets/rmc/icon.png",
-  "environment": "server",
+  "environment": "*",
   "entrypoints": {
-    "server": [
-      {
-        "adapter": "kotlin",
-        "value": "cn.rtast.rmc.RMC"
-      }
+    "main": [
+      "cn.rtast.rmc.RMC"
     ]
   },
   "mixins": [

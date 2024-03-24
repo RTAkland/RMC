@@ -4,12 +4,7 @@
   "package": "cn.rtast.rmc.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "BlockMixin",
-    "ServerStatHandlerMixin",
-    "StatsAccessor",
-    "StatsMixin"
-  ],
-  "client": [
+    "BlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1
