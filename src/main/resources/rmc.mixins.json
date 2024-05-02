@@ -4,9 +4,7 @@
   "package": "cn.rtast.rmc.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "BlockMixin",
-    "PlayerManagerMixin",
-    "ServerPlayerEntityMixin"
+    "BlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1
