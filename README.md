@@ -7,7 +7,7 @@
 <br>
 
 <img alt="GitHub" src="https://img.shields.io/github/license/DangoTown/RMC?logo=apache">
-<img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/DangoTown/RMC/ci.yaml">
+<img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/RTAkland/RMC/main.yml">
 </div>
 
 # 使用
